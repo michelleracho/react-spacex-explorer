@@ -43,7 +43,7 @@ export default function Header(props) {
         {props.authenticated ? (
           <div>
             <span onClick={logout}>Logout</span>
-            <img src={props.avatar} alt="Profile Image" />
+            <img src={props.avatar} alt="User Profile" />
           </div>
         ) : (
           <span onClick={login}>Login</span>
