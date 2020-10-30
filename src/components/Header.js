@@ -13,19 +13,20 @@ const StyledHeader = styled.header`
   background-color: var(--primary-brand-color);
   box-shadow: 1px 1px 10px 1px var(--light-shadow);
 
-  h1 a:link,
-  h1 a:visited {
+  h1 {
     font-family: var(--logo-font);
-    color: var(--secondary-brand-color);
-    text-decoration: none;
   }
 
-  span,
-  span a:link,
-  span a:visited {
+  span {
     font-weight: 700;
     cursor: pointer;
     margin-right: 20px;
+    color: var(--secondary-brand-color);
+  }
+
+  a,
+  a:link,
+  a:visited {
     color: var(--secondary-brand-color);
     text-decoration: none;
   }
