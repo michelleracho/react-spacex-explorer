@@ -5,16 +5,16 @@ const StyledCard = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 16px;
-  border: 3px solid var(--primary-brand-color);
-  border-radius: 12px;
-  width: 300px;
-  height: 150px;
+  margin: 1.6rem;
+  border: 0.3rem solid var(--primary-brand-color);
+  border-radius: 1.2rem;
+  width: 30rem;
+  height: 15rem;
   color: var(--primary-brand-color);
-  box-shadow: 1px 1px 5px 1px var(--light-shadow);
+  box-shadow: 1px 1px 0.5rem 1px var(--light-shadow);
 
   &:hover {
-    box-shadow: 1px 1px 15px 1px var(--light-shadow);
+    box-shadow: 1px 1px 1.5rem 1px var(--light-shadow);
   }
 `;
 

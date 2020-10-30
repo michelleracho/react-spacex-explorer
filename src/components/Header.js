@@ -2,25 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { login, logout } from '../services/firebase';
+import { logout } from '../services/firebase';
 
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 2rem 3.5rem;
   background-color: var(--primary-brand-color);
   box-shadow: 1px 1px 10px 1px var(--light-shadow);
 
   h1 {
+    font-size: 5rem;
     font-family: var(--logo-font);
   }
 
   span {
+    font-size: 2rem;
     font-weight: 700;
     cursor: pointer;
-    margin-right: 20px;
+    margin-right: 2rem;
     color: var(--secondary-brand-color);
   }
 
@@ -37,7 +38,7 @@ const StyledNav = styled.nav`
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
-  margin-left: 30px;
+  margin-left: 3rem;
 
   div {
     display: flex;
@@ -45,7 +46,7 @@ const StyledNav = styled.nav`
   }
 
   img {
-    height: 50px;
+    height: 5rem;
     border-radius: 50%;
   }
 `;
@@ -68,7 +69,9 @@ export default function Header(props) {
           </div>
         </StyledNav>
       ) : (
-        <span onClick={login}>Login</span>
+        <span>
+          <Link to="/login">Login</Link>
+        </span>
       )}
     </StyledHeader>
   );

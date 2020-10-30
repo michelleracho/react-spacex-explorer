@@ -6,11 +6,6 @@ import Card from '../components/Card';
 import { getLaunchData } from '../services/spacex-api';
 
 const StyledDiv = styled.div`
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   section {
     display: flex;
     flex-wrap: wrap;
