@@ -6,7 +6,13 @@ const StyledFooter = styled.footer`
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
-  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--primary-brand-color);
+  color: var(--secondary-brand-color);
+
+  p {
+    z-index: 100;
+  }
 `;
 
 export default function Footer(props) {

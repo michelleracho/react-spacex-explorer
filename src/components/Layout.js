@@ -17,12 +17,14 @@ const StyledLayout = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   main {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.95);
   }
 `;
 
