@@ -28,14 +28,17 @@ const StyledEarth = styled.img`
   left: 0;
   z-index: 1;
   /* border: 2px solid; */
-  border-radius: 50%;
+  border-radius: 35%;
 `;
 
 const StyledRocket = styled.picture`
   position: absolute;
-  left: 14rem; // 12rem;
-  bottom: 10rem;
-  width: 15%; // 20%;
+  /* left: 14rem; */
+  /* bottom: 10rem; */
+  right: 0;
+  top: -10%;
+  width: 15%;
+  transform: rotate(-60deg);
 
   img {
     position: relative;
@@ -51,9 +54,9 @@ const StyledRocket = styled.picture`
   /* fire */
   img:last-child {
     z-index: 2;
-    bottom: 5.5rem; // 7rem;
-    left: 4rem;
-    width: 50%; // 60%
+    bottom: 7.5rem;
+    left: 5.6rem;
+    width: 50%;
   }
 `;
 
