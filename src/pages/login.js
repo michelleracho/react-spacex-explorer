@@ -24,7 +24,7 @@ const StyledDiv = styled.div`
   button {
     font-size: 2rem;
     cursor: pointer;
-    color: var(--primary-brand-color);
+    color: var(--secondary-brand-color);
     border: none;
     outline: none;
     background-color: transparent;

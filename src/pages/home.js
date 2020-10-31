@@ -4,11 +4,12 @@ import styled from 'styled-components';
 // images
 import rocket from '../img/rocket.png';
 import fire from '../img/fire.png';
-import earth from '../img/earth-2.png';
+import earth from '../img/earth.png';
 
 const StyledDiv = styled.div`
   position: relative;
-  width: 80vw;
+  max-width: 1440px;
+  width: 100%;
   height: 80vh;
   display: flex;
   /* align-items: center; */
@@ -27,8 +28,7 @@ const StyledEarth = styled.img`
   bottom: -25%;
   left: 0;
   z-index: 1;
-  /* border: 2px solid; */
-  border-radius: 35%;
+  border-radius: 50%;
 `;
 
 const StyledRocket = styled.picture`
@@ -63,7 +63,7 @@ const StyledRocket = styled.picture`
 export default function Home(props) {
   return (
     <StyledDiv>
-      <h1>home page</h1>
+      {props.authenticated ? <h1>Welcome, {props.name}!</h1> : <h1>Welcome!</h1>}
 
       <div>
         <StyledRocket>

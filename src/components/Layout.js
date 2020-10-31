@@ -25,6 +25,7 @@ const StyledLayout = styled.div`
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.95);
+    color: var(--secondary-brand-color);
   }
 `;
 
@@ -62,7 +63,17 @@ export default function Layout(props) {
       <Header avatar={authState.photoURL} authenticated={authState.authenticated} />
       <main>
         <Switch>
-          <Route exact path="/" render={props => <Home {...props} />} />
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <Home
+                name={authState.displayName}
+                authenticated={authState.authenticated}
+                {...props}
+              />
+            )}
+          />
           <Route
             exact
             path="/launches"

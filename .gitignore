@@ -25,4 +25,5 @@ yarn-error.log*
 
 # temp files/folders
 /src/img/api screenshot.png
+/src/img/not-used
 /src/components/List.js

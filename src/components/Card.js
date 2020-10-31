@@ -10,7 +10,7 @@ const StyledCard = styled.div`
   border-radius: 1.2rem;
   width: 30rem;
   height: 15rem;
-  color: var(--primary-brand-color);
+  color: var(--secondary-brand-color);
   box-shadow: 1px 1px 0.5rem 1px var(--light-shadow);
 
   &:hover {
