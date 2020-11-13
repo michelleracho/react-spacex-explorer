@@ -82,7 +82,7 @@ export default function Launches() {
     <StyledDiv>
       <StyledSort>
         <label htmlFor="sort">Sort</label>
-        <select id="sort" onChange={handleSort}>
+        <select id="sort" value={sortOrder} onChange={handleSort}>
           <option value="desc">Newest first</option>
           <option value="asc">Oldest first</option>
         </select>
