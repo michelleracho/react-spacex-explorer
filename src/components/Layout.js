@@ -26,6 +26,7 @@ const StyledLayout = styled.div`
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.95);
     color: var(--secondary-brand-color);
+    position: relative;
   }
 `;
 
