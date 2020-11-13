@@ -6,15 +6,14 @@ import Pagination from '../components/Pagination';
 
 import { getLaunchData } from '../services/spacex-api';
 
-const StyledDiv = styled.div`
-  section {
-    min-height: 60vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 15px auto;
-  }
+const StyledUl = styled.ul`
+  min-height: 60vh;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto;
 `;
 
 export default function Launches(props) {
@@ -44,17 +43,17 @@ export default function Launches(props) {
   const firstItemIndex = lastItemIndex - itemsPerPage;
   const currentLaunches = launchData.slice(firstItemIndex, lastItemIndex);
 
-  const cards = currentLaunches.map(launch => (
-    <Card key={launch.flight_number} id={launch.flight_number} missionName={launch.mission_name} />
-  ));
+  const cards = currentLaunches.map(launch => <Card key={launch.flight_number} {...launch} />);
 
   if (isLoading) {
     return <h1>loading...</h1>;
   }
 
   return (
-    <StyledDiv>
-      <section>{cards}</section>
+    <div>
+      <section>
+        <StyledUl>{cards}</StyledUl>
+      </section>
 
       <Pagination
         itemsPerPage={itemsPerPage}
@@ -62,6 +61,6 @@ export default function Launches(props) {
         updatePage={updatePage}
         currentPage={currentPage}
       />
-    </StyledDiv>
+    </div>
   );
 }

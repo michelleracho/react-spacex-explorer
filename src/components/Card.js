@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const StyledCard = styled.div`
+import CardModal from './CardModal';
+
+const StyledCard = styled.li`
+  font-size: 2rem;
+  padding: 1rem;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +17,7 @@ const StyledCard = styled.div`
   height: 15rem;
   color: var(--secondary-brand-color);
   box-shadow: 1px 1px 0.5rem 1px var(--light-shadow);
+  cursor: pointer;
 
   &:hover {
     box-shadow: 1px 1px 1.5rem 1px var(--light-shadow);
@@ -19,9 +25,16 @@ const StyledCard = styled.div`
 `;
 
 export default function Card(props) {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(prev => !prev);
+  };
+
   return (
-    <StyledCard>
-      <h3>{props.missionName}</h3>
-    </StyledCard>
+    <>
+      <StyledCard onClick={openModal}>{props.mission_name}</StyledCard>
+      <CardModal {...props} showModal={showModal} setShowModal={setShowModal} />
+    </>
   );
 }
