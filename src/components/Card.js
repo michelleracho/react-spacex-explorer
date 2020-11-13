@@ -8,6 +8,7 @@ const StyledCard = styled.li`
   padding: 1rem;
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1.6rem;
@@ -22,6 +23,12 @@ const StyledCard = styled.li`
   &:hover {
     box-shadow: 1px 1px 1.5rem 1px var(--light-shadow);
   }
+
+  span {
+    font-size: 1.3rem;
+    color: var(--light-shadow);
+    margin-top: 0.5rem;
+  }
 `;
 
 export default function Card(props) {
@@ -33,8 +40,11 @@ export default function Card(props) {
 
   return (
     <>
-      <h1>{props.flight_number}</h1>
-      <StyledCard onClick={openModal}>{props.mission_name}</StyledCard>
+      {/* <h1>{props.flight_number}</h1> */}
+      <StyledCard onClick={openModal}>
+        {props.mission_name}
+        <span>{props.launch_year}</span>
+      </StyledCard>
       <CardModal {...props} showModal={showModal} setShowModal={setShowModal} />
     </>
   );
