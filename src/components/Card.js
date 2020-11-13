@@ -33,6 +33,7 @@ export default function Card(props) {
 
   return (
     <>
+      <h1>{props.flight_number}</h1>
       <StyledCard onClick={openModal}>{props.mission_name}</StyledCard>
       <CardModal {...props} showModal={showModal} setShowModal={setShowModal} />
     </>

@@ -21,17 +21,22 @@ export default function Launches(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
+  const [sortOrder, setSortOrder] = useState('desc');
 
   useEffect(() => {
     // fetch API data
     async function fetchData() {
       setIsLoading(true);
-      const data = await getLaunchData();
+      const data = await getLaunchData(sortOrder);
       setLaunchData(data);
       setIsLoading(false);
     }
     fetchData();
-  }, []);
+  }, [sortOrder]);
+
+  const handleSort = e => {
+    setSortOrder(e.target.value);
+  };
 
   // change current page
   const updatePage = pageNumber => {
@@ -51,6 +56,11 @@ export default function Launches(props) {
 
   return (
     <div>
+      <select onChange={handleSort}>
+        <option value="desc">Newest first</option>
+        <option value="asc">Oldest first</option>
+      </select>
+
       <section>
         <StyledUl>{cards}</StyledUl>
       </section>
