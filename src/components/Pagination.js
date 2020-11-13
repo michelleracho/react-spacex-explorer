@@ -4,27 +4,20 @@ import styled from 'styled-components';
 const StyledUl = styled.ul`
   list-style: none;
   display: flex;
+  justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
 `;
 
 const StyledLi = styled.li`
-  padding: 0.5rem 0;
   width: 5rem;
+  height: 1.2rem;
   text-align: center;
   cursor: pointer;
 
   &:not(:last-child) {
     border-right: 1px solid var(--light-shadow);
-  }
-
-  a {
-    text-decoration: none;
-    color: currentColor;
   }
 `;
 
@@ -40,15 +33,14 @@ export default function Pagination({ itemsPerPage, totalItems, updatePage, curre
   return (
     <StyledUl>
       {pageNumbers.map(page => (
-        <StyledLi key={page} onClick={() => updatePage(page)}>
-          <a
-            href="#"
-            style={{
-              fontSize: page === currentPage ? '2rem' : '1.2rem'
-            }}
-          >
-            {page}
-          </a>
+        <StyledLi
+          key={page}
+          onClick={() => updatePage(page)}
+          style={{
+            fontSize: page === currentPage ? '2rem' : '1.2rem'
+          }}
+        >
+          {page}
         </StyledLi>
       ))}
     </StyledUl>

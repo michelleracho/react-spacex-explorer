@@ -8,9 +8,11 @@ import { getLaunchData } from '../services/spacex-api';
 
 const StyledDiv = styled.div`
   section {
+    min-height: 60vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     margin: 15px auto;
   }
 `;
